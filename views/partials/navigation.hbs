@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <title></title>
+</head>
+
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" onload="calificar()">
+        <div class="contenedor">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                {{#if user}}
+                <li class="nav-link">
+                    <a class="nav-link" href="/profile"><i class="fas fa-smile-beam"></i>Situacion Academica</a>
+                </li>
+                <li class="nav-link">
+                    <a class="nav-link" href="/logout"><i class="fas fa-sad-tear"></i>Salir</a>
+                </li>
+                {{else}}
+                <li class="nav-link">
+                    <a class="nav-link" href="/signup"><i class="fas fa-address-card"></i>Registrarse</a>
+                </li>
+                {{/if}}
+            </div>
+        </div>
+    </nav>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+</body>
+
+</html>
