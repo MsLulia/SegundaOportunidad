@@ -18,15 +18,10 @@ router.get('/signin', (req, res) => {
 });
 
 router.post('/signin', (req, res, next) => {
-    req.check('NoControl', 'No de control').notEmpty;
-    req.check('password', 'Contrasena requerida').notEmpty();
-    const errors = req.validationErrors();
-    if (errors.length > 0) {
-        req.flash('message', errors[0].msg);
-        res.redirect('/signin');
-    }
     passport.authenticate('local.signin', {
         successRedirect: '/profile',
+        failureRedirect: '/signin',
+        failureFlash: true
     })(req, res, next);
 });
 

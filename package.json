@@ -9,7 +9,7 @@
     "publish": "now --prod"
   },
   "keywords": [],
-  "author": "",
+  "author": "Edith Adriana, Javier Isaac",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
